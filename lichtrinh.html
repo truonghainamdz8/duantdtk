@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Trình Du Lịch - Vĩnh Long Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .schedule-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .filters {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .filter-group {
+            margin-bottom: 15px;
+        }
+
+        .filter-group h3 {
+            color: #2b7a4b;
+            margin-bottom: 10px;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-option {
+            background: #f0f8f3;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-option:hover {
+            background: #2b7a4b;
+            color: white;
+        }
+
+        .filter-option.active {
+            background: #2b7a4b;
+            color: white;
+        }
+
+        .schedule-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .schedule-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .schedule-title {
+            color: #2b7a4b;
+            font-size: 1.2em;
+        }
+
+        .schedule-tags {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .tag {
+            background: #e8f5e9;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            color: #2b7a4b;
+        }
+
+        .schedule-timeline {
+            border-left: 2px solid #2b7a4b;
+            padding-left: 20px;
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #2b7a4b;
+            border-radius: 50%;
+            position: absolute;
+            left: -26px;
+            top: 5px;
+        }
+
+        .time {
+            color: #2b7a4b;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2b7a4b;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background: #1e5735;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">← Về trang chủ</a>
+
+    <div class="schedule-container">
+        <h1>Lịch Trình Du Lịch Vĩnh Long</h1>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <h3>Thời gian</h3>
+                <div class="filter-options">
+                    <div class="filter-option">Nửa ngày</div>
+                    <div class="filter-option">1 ngày</div>
+                    <div class="filter-option">2 ngày 1 đêm</div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3>Sở thích</h3>
+                <div class="filter-options">
+                    <div class="filter-option">Ngắm cảnh 🌅</div>
+                    <div class="filter-option">Chèo thuyền 🛶</div>
+                    <div class="filter-option">Ẩm thực 🍜</div>
+                    <div class="filter-option">Vườn trái cây 🍊</div>
+                    <div class="filter-option">Check-in 📸</div>
+                    <div class="filter-option">Văn hóa 🏮</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="schedule-list">
+            <!-- Tour nửa ngày -->
+            <div class="schedule-item" data-duration="nửa ngày" data-interests="ngắm cảnh,ẩm thực,check-in">
+                <div class="schedule-header">
+                    <h2 class="schedule-title">Tour Hoàng Hôn Sông Nước (Nửa ngày)</h2>
+                </div>
+                <div class="schedule-tags">
+                    <span class="tag">Ngắm cảnh</span>
+                    <span class="tag">Ẩm thực</span>
+                    <span class="tag">Check-in</span>
+                </div>
+                <div class="schedule-timeline">
+                    <div class="timeline-item">
+                        <span class="time">14:00</span> - Khởi hành từ trung tâm TP. Vĩnh Long
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">14:30</span> - Check-in tại Riverside Park
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">16:00</span> - Thưởng thức đặc sản tại chợ nổi
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">17:30</span> - Ngắm hoàng hôn trên sông
+                    </div>
+                </div>
+            </div>
+
+            <div class="schedule-item" data-duration="nửa ngày" data-interests="văn hóa,ẩm thực">
+                <div class="schedule-header">
+                    <h2 class="schedule-title">Tour Văn Hóa Miệt Vườn (Nửa ngày)</h2>
+                </div>
+                <div class="schedule-tags">
+                    <span class="tag">Văn hóa</span>
+                    <span class="tag">Ẩm thực</span>
+                </div>
+                <div class="schedule-timeline">
+                    <div class="timeline-item">
+                        <span class="time">08:00</span> - Tham quan làng nghề truyền thống
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">09:30</span> - Thưởng thức đờn ca tài tử
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">11:00</span> - Ăn trưa với đặc sản địa phương
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 1 ngày -->
+            <div class="schedule-item" data-duration="1 ngày" data-interests="chèo thuyền,vườn trái cây,ẩm thực">
+                <div class="schedule-header">
+                    <h2 class="schedule-title">Tour Khám Phá Cù Lao (1 ngày)</h2>
+                </div>
+                <div class="schedule-tags">
+                    <span class="tag">Chèo thuyền</span>
+                    <span class="tag">Vườn trái cây</span>
+                    <span class="tag">Ẩm thực</span>
+                </div>
+                <div class="schedule-timeline">
+                    <div class="timeline-item">
+                        <span class="time">07:30</span> - Khởi hành đến Cù lao An Bình
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">08:30</span> - Chèo thuyền khám phá kênh rạch
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">10:30</span> - Tham quan vườn trái cây theo mùa
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">12:00</span> - Ăn trưa tại nhà vườn
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">14:00</span> - Trải nghiệm làm bánh dân gian
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">16:00</span> - Kết thúc tour
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 2 ngày 1 đêm -->
+            <div class="schedule-item" data-duration="2 ngày 1 đêm" data-interests="ngắm cảnh,chèo thuyền,văn hóa,ẩm thực,check-in">
+                <div class="schedule-header">
+                    <h2 class="schedule-title">Tour Trọn Vẹn Vĩnh Long (2 ngày 1 đêm)</h2>
+                </div>
+                <div class="schedule-tags">
+                    <span class="tag">Ngắm cảnh</span>
+                    <span class="tag">Chèo thuyền</span>
+                    <span class="tag">Văn hóa</span>
+                    <span class="tag">Ẩm thực</span>
+                    <span class="tag">Check-in</span>
+                </div>
+                <div class="schedule-timeline">
+                    <h3>Ngày 1:</h3>
+                    <div class="timeline-item">
+                        <span class="time">07:30</span> - Khởi hành từ TP. Vĩnh Long
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">08:30</span> - Check-in CocoHome
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">10:00</span> - Chèo thuyền khám phá Cù lao
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">12:00</span> - Ăn trưa tại nhà vườn
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">14:00</span> - Tham quan làng nghề
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">16:00</span> - Check-in hoàng hôn tại Riverside
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">18:00</span> - Ăn tối & nghỉ ngơi
+                    </div>
+                    <h3>Ngày 2:</h3>
+                    <div class="timeline-item">
+                        <span class="time">07:00</span> - Ăn sáng
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">08:30</span> - Tham quan chợ nổi
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">10:30</span> - Trải nghiệm làm bánh dân gian
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">12:00</span> - Ăn trưa & kết thúc tour
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Xóa tất cả script cũ và thay bằng script mới này -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const schedules = document.querySelectorAll('.schedule-item');
+                
+                // Xử lý click cho các filter options
+                document.querySelectorAll('.filter-option').forEach(option => {
+                    option.addEventListener('click', function() {
+                        // Xử lý cho filter thời gian
+                        if (this.closest('.filter-group').querySelector('h3').textContent === 'Thời gian') {
+                            const timeOptions = this.closest('.filter-options').querySelectorAll('.filter-option');
+                            // Nếu đang active thì bỏ active
+                            if (this.classList.contains('active')) {
+                                this.classList.remove('active');
+                            } else {
+                                // Nếu chưa active thì bỏ active các ô khác và active ô này
+                                timeOptions.forEach(opt => opt.classList.remove('active'));
+                                this.classList.add('active');
+                            }
+                        } else {
+                            // Xử lý cho các filter khác
+                            this.classList.toggle('active');
+                        }
+                        
+                        // Lọc tours
+                        filterTours();
+                    });
+                });
+
+                // Giữ nguyên phần code filterTours()...
+                function filterTours() {
+                    const selectedTime = document.querySelector('.filter-group:first-child .filter-option.active')?.textContent.toLowerCase();
+                    const selectedInterests = Array.from(
+                        document.querySelectorAll('.filter-group:last-child .filter-option.active')
+                    ).map(el => el.textContent.split(' ')[0].toLowerCase());
+
+                    schedules.forEach(schedule => {
+                        let showSchedule = true;
+
+                        // Kiểm tra thời gian nếu có chọn
+                        if (selectedTime) {
+                            showSchedule = schedule.dataset.duration.toLowerCase() === selectedTime;
+                        }
+
+                        // Kiểm tra sở thích nếu có chọn
+                        if (showSchedule && selectedInterests.length > 0) {
+                            const tourInterests = schedule.dataset.interests.split(',');
+                            showSchedule = selectedInterests.some(interest => 
+                                tourInterests.includes(interest.toLowerCase())
+                            );
+                        }
+
+                        schedule.style.display = showSchedule ? 'block' : 'none';
+                    });
+
+                    // Hiển thị thông báo nếu không có kết quả
+                    const hasResults = Array.from(schedules).some(s => s.style.display === 'block');
+                    let noResults = document.querySelector('.no-results');
+                    
+                    if (!hasResults) {
+                        if (!noResults) {
+                            noResults = document.createElement('div');
+                            noResults.className = 'no-results';
+                            noResults.style.textAlign = 'center';
+                            noResults.style.padding = '20px';
+                            document.querySelector('.schedule-list').appendChild(noResults);
+                        }
+                        noResults.textContent = 'Không có lịch trình phù hợp với lựa chọn của bạn';
+                    } else if (noResults) {
+                        noResults.remove();
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

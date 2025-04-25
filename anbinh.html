@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cù lao An Bình - Vĩnh Long Travel</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background-color: #f4fbf6;
+      padding: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .popup {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      padding: 12px 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 999;
+      font-weight: bold;
+      color: #2b7a4b;
+      animation: slideDown 0.4s ease-in-out;
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translate(-50%, -20px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+    .back {
+      margin-bottom: 20px;
+      display: block;
+      color: #2b7a4b;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .detail-container img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 10px 0;
+    }
+    h1 {
+      color: #2b7a4b;
+      margin-bottom: 10px;
+    }
+    .info p {
+      margin: 6px 0;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #333;
+    }
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+    .schedule, .review {
+      margin-top: 30px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+    .schedule h3, .review h3 {
+      color: #2b7a4b;
+      margin-bottom: 10px;
+    }
+    .schedule ul {
+      padding-left: 20px;
+    }
+    .schedule li {
+      margin-bottom: 6px;
+    }
+    .call-btn {
+      display: inline-block;
+      margin-left: 10px;
+      background-color: #28a745;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .call-btn:hover {
+      background-color: #218838;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup" id="popup">🎉 Chào mừng bạn đến với Vĩnh Long!</div>
+  <script>
+    setTimeout(() => {
+      document.getElementById("popup").style.display = "none";
+    }, 5000);
+  </script>
+
+  <a class="back" href="index.html">← Về trang chủ</a>
+
+  <div class="detail-container">
+    <h1>Cù lao An Bình</h1>
+    <img src="images/culaoanbinh.jpg" alt="Cù lao An Bình">
+    <div class="info">
+      <p><i class="fa-solid fa-location-dot"></i> <span class="highlight">Địa chỉ:</span> Xã An Bình, huyện Long Hồ, tỉnh Vĩnh Long</p>
+      <p><i class="fa-solid fa-clock"></i> <span class="highlight">Thời gian mở cửa:</span> 6h00 - 18h00</p>
+      <p><i class="fa-solid fa-tree"></i> <span class="highlight">Hoạt động nổi bật:</span> đờn ca tài tử, chèo xuồng, vườn trái cây</p>
+      <p><i class="fa-solid fa-star"></i> <span class="highlight">Đánh giá:</span> ⭐ 4.7 / 5 (100+ lượt đánh giá)</p>
+      <p><i class="fa-solid fa-phone" style="color: #28a745;"></i> <span class="highlight">Liên hệ:</span>
+        <a href="tel:02703831235" class="call-btn">Gọi ngay: 0270 383 1235</a>
+      </p>
+    </div>
+
+    <h3>Bản đồ vị trí</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.9245278796786!2d105.98503091462224!3d10.34108756978583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a065be6b1cf3e1%3A0x605882b1df7db879!2zQ8awIGxhbwAgQW4gQsOsbmgsIFbGsMahbmcgTG9uZw!5e0!3m2!1svi!2s!4v1687001234567"
+      allowfullscreen loading="lazy"></iframe>
+
+    <div class="schedule">
+      <h3>🗓️ Gợi ý lịch trình tại Cù lao An Bình</h3>
+      <ul>
+        <li>⏰ 08:00 - Tham quan vườn trái cây</li>
+        <li>🎶 10:00 - Thưởng thức đờn ca tài tử</li>
+        <li>🍽️ 12:00 - Dùng bữa trên chòi lá ven sông</li>
+        <li>🚣 14:00 - Chèo xuồng thư giãn</li>
+      </ul>
+    </div>
+
+    <div class="review">
+      <h3>🗣️ Đánh giá từ du khách</h3>
+      <p><strong>👩 Mai Linh:</strong> “Vị trí xanh mát, rất phù hợp cho gia đình!”</p>
+      <p><strong>👦 Hà Thanh:</strong> “Chèo xuồng vui, nhiều điểm sống ảo đẹp.”</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Du lịch Vĩnh Long | Email: dulichvinhlong@gmail.com</p>
+  </footer>
+</body>
+</html>

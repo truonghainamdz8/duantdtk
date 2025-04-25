@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riverside Park Eco Resort - Vĩnh Long Travel</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background-color: #f4fbf6;
+      padding: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .popup {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      padding: 12px 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 999;
+      font-weight: bold;
+      color: #2b7a4b;
+      animation: slideDown 0.4s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translate(-50%, -20px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    .back {
+      margin-bottom: 20px;
+      display: block;
+      color: #2b7a4b;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .detail-container img {
+      width: 100%;
+      max-height: 600px; /* Tăng lên 600px để ảnh to hơn */
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 20px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Tăng shadow để ảnh nổi bật hơn */
+      transition: transform 0.3s ease; /* Thêm hiệu ứng hover */
+    }
+
+    .detail-container img:hover {
+      transform: scale(1.02); /* Hiệu ứng phóng to nhẹ khi hover */
+    }
+
+    /* Điều chỉnh container để phù hợp với ảnh lớn */
+    .detail-container {
+      max-width: 1200px; /* Tăng kích thước tối đa của container */
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      /* Thêm style cho tiêu đề */
+      .page-title {
+        text-align: center;
+        font-size: 2.5em;
+        color: #2b7a4b;
+        margin: 30px 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .page-title span {
+        display: inline-block;
+        padding: 10px 30px;
+        background: rgba(255,255,255,0.9);
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+      color: #2b7a4b;
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      margin: 6px 0;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #333;
+    }
+
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    .schedule, .review {
+      margin-top: 30px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+
+    .schedule h3, .review h3 {
+      color: #2b7a4b;
+      margin-bottom: 10px;
+    }
+
+    .schedule ul {
+      padding-left: 20px;
+    }
+
+    .schedule li {
+      margin-bottom: 6px;
+    }
+
+    .call-btn {
+      display: inline-block;
+      margin-left: 10px;
+      background-color: #28a745;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .call-btn:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup" id="popup">🌿🏡 <strong>Hoàng Hảo</strong> – Trốn phố về quê, thảnh thơi miền sông nước </p></div>
+  <script>
+    setTimeout(() => {
+      document.getElementById("popup").style.display = "none";
+    }, 5000);
+  </script>
+
+  <a class="back" href="index.html">← Về trang chủ</a>
+
+  <div class="detail-container">
+    <h1 class="page-title"><span>KDL Sinh Thái Hoàng Hảo</span></h1>
+    <img src="images/hoanghao.jpg" alt="KDL Sinh Thái Hoàng Hảo">
+    <div class="info">
+      <p><i class="fa-solid fa-location-dot"></i> <span class="highlight">Địa chỉ:</span> Quốc lộ 57, xã Thanh Đức, huyện Long Hồ, tỉnh Vĩnh Long</p>
+      <p><i class="fa-solid fa-clock"></i> <span class="highlight">Thời gian mở cửa:</span> 24/24 </p>
+      <p><i class="fa-solid fa-tree"></i> <span class="highlight">Hoạt động nổi bật:</span> 🎣 Tát mương bắt cá – 🐸 Bắt ếch, bắt vịt – 🚣‍♀️ Chèo xuồng – 🌉 Đi cầu khỉ – 🚴‍♂️ Đạp xe qua cầu ván – 🍲 Thưởng thức đặc sản miền Tây      </p>
+      <p><i class="fa-solid fa-star"></i> <span class="highlight">Đánh giá:</span> ⭐ 4.2 / 5 (82 lượt đánh giá)</p>
+      <p><i class="fa-solid fa-phone" style="color: #28a745;"></i> <span class="highlight">Liên hệ:</span> 
+        <a href="tel:02703831234" class="call-btn">Gọi ngay:  0270 389 9699</a>
+      </p>
+    </div>
+
+    <h3>Bản đồ vị trí</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.000553131679!2d105.95661611429024!3d10.250781871531477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0383a75509c4d%3A0x2a5c2db65fbd0161!2sKhu%20Du%20L%E1%BB%8Bch%20Vinh%20Sang!5e0!3m2!1svi!2s!4v1686999999999"
+        allowfullscreen loading="lazy"></iframe>
+
+    <div class="schedule">
+      <h3>🗓️ Gợi ý lịch trình tại KDL Sinh Thái Hoàng Hảo</h3>
+      <ul>
+        <li>🚗 07:30 - Khởi hành từ trung tâm TP Vĩnh Long</li>
+        <li>🛎️ 08:00 - Đến và check-in tại cổng KDL Hoàng Hảo</li>
+        <li>🌿 08:30 - Dạo quanh khuôn viên xanh mát, chụp ảnh check-in</li>
+        <li>🎣 09:30 - Tát mương bắt cá, bắt vịt, bắt ếch cực vui</li>
+        <li>🚣‍♀️ 11:00 - Chèo xuồng, đi cầu khỉ, đạp xe qua cầu ván</li>
+        <li>🍽️ 12:30 - Thưởng thức bữa trưa đặc sản miền Tây tại nhà hàng</li>
+        <li>🌼 14:00 - Tham quan vườn hoa, nghỉ ngơi trong bungalow view hồ sen</li>
+        <li>🎁 15:30 - Mua đặc sản và quà lưu niệm</li>
+      </ul>                  
+    </div>
+
+    <div class="review">
+        <h3>🗣️ Đánh giá từ khách tham quan</h3>
+<p><strong>👩 Mai Ly:</strong> “Lâu rồi mới thấy tụi nhỏ cười nhiều như vậy, cực kỳ đáng đi!”</p>
+<p><strong>👨 Hữu Tín:</strong> “Tát mương bắt cá vui quá trời, cảm giác như về quê ngoại.”</p>
+<p><strong>👧 Bé Bảo Nhi:</strong> “Con được bắt ếch, đi cầu khỉ nữa, vui ghê luôn á!”</p>
+<p><strong>👩‍🦰 Thảo My:</strong> “Không gian rộng, nhiều cây xanh, góc nào cũng lên hình đẹp.”</p>
+<p><strong>👨‍👩‍👧 Gia đình Nhật:</strong> “Cả nhà đi chơi cuối tuần mà thấy gắn kết hơn hẳn!”</p>       
+    </div>
+  </div>
+
+  <footer>
+    <p>© Dự Án Do HIGH TEAM Xây Dựng & Phát Triển | Email: dulichvinhlong@gmail.com</p>
+  </footer>
+</body>
+</html>

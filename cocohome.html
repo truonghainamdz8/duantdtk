@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CoCoHome - Vĩnh Long Travel</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background-color: #f4fbf6;
+      padding: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .popup {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      padding: 12px 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 999;
+      font-weight: bold;
+      color: #2b7a4b;
+      animation: slideDown 0.4s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translate(-50%, -20px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    .back {
+      margin-bottom: 20px;
+      display: block;
+      color: #2b7a4b;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .detail-container img {
+      width: 100%;
+      max-height: 600px; /* Tăng lên 600px để ảnh to hơn */
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 20px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Tăng shadow để ảnh nổi bật hơn */
+      transition: transform 0.3s ease; /* Thêm hiệu ứng hover */
+    }
+
+    .detail-container img:hover {
+      transform: scale(1.02); /* Hiệu ứng phóng to nhẹ khi hover */
+    }
+
+    /* Điều chỉnh container để phù hợp với ảnh lớn */
+    .detail-container {
+      max-width: 1200px; /* Tăng kích thước tối đa của container */
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      /* Thêm style cho tiêu đề */
+      .page-title {
+        text-align: center;
+        font-size: 2.5em;
+        color: #2b7a4b;
+        margin: 30px 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .page-title span {
+        display: inline-block;
+        padding: 10px 30px;
+        background: rgba(255,255,255,0.9);
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+      color: #2b7a4b;
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      margin: 6px 0;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #333;
+    }
+
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    .schedule, .review {
+      margin-top: 30px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+
+    .schedule h3, .review h3 {
+      color: #2b7a4b;
+      margin-bottom: 10px;
+    }
+
+    .schedule ul {
+      padding-left: 20px;
+    }
+
+    .schedule li {
+      margin-bottom: 6px;
+    }
+
+    .call-btn {
+      display: inline-block;
+      margin-left: 10px;
+      background-color: #28a745;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .call-btn:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup" id="popup">🥥🏡 <strong>CoCo Home</strong> – Nơi dừa kể chuyện, miền Tây níu chân 🌾🚣</p></div>
+  <script>
+    setTimeout(() => {
+      document.getElementById("popup").style.display = "none";
+    }, 5000);
+  </script>
+
+  <a class="back" href="index.html">← Về trang chủ</a>
+
+  <div class="detail-container">
+    <h1 class="page-title"><span>CoCo Home</span></h1>
+    <img src="images/cocohome-1.jpg" alt="CoCo Home">
+    <div class="info">
+      <p><i class="fa-solid fa-location-dot"></i> <span class="highlight">Địa chỉ:</span> Ấp Hoà Quí, Hoà Ninh, Long Hồ, Vĩnh Long</p>
+      <p><i class="fa-solid fa-clock"></i> <span class="highlight">Thời gian mở cửa:</span> Cả ngày</p>
+      <p><i class="fa-solid fa-tree"></i> <span class="highlight">Hoạt động nổi bật:</span> khu nhà tự, khu nhà ăn, khu lưu niệm, khu homestay và vườn trái cây.</p>
+      <p><i class="fa-solid fa-star"></i> <span class="highlight">Đánh giá:</span> ⭐ 4.4 / 5 (82 lượt đánh giá)</p>
+      <p><i class="fa-solid fa-phone" style="color: #28a745;"></i> <span class="highlight">Liên hệ:</span> 
+        <a href="tel:02703831234" class="call-btn">Gọi ngay:  0270 3505 356</a>
+      </p>
+    </div>
+
+    <h3>Bản đồ vị trí</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.000553131679!2d105.95661611429024!3d10.250781871531477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0383a75509c4d%3A0x2a5c2db65fbd0161!2sKhu%20Du%20L%E1%BB%8Bch%20Vinh%20Sang!5e0!3m2!1svi!2s!4v1686999999999"
+        allowfullscreen loading="lazy"></iframe>
+
+    <div class="schedule">
+      <h3>🗓️ Gợi ý lịch trình tại CoCo Home</h3>
+      <ul>
+        <li>🌅 07:30 - Khởi hành từ trung tâm thành phố Vĩnh Long</li>
+        <li>🌴 08:30 - Tham quan vườn trái cây, hái và thưởng thức tại chỗ</li>
+        <li>🥥 10:00 - Khám phá Nhà Dừa CocoHome – ngôi nhà từ 4000 cây dừa</li>
+        <li>🎶 11:00 - Thưởng thức đờn ca tài tử và tham gia làm bánh dân gian</li>
+        <li>🍲 12:30 - Dùng bữa trưa với đặc sản miền Tây sông nước</li>
+        <li>🛶 14:00 - Chèo xuồng khám phá rạch dừa nước và đời sống người dân</li>
+        <li>📸 15:30 - Chụp ảnh check-in tại các góc trang trí sinh thái đẹp mắt</li>
+        <li>🛍️ 16:00 - Mua quà lưu niệm thủ công từ gỗ dừa</li>
+      </ul>      
+    </div>
+
+    <div class="review">
+        <h3>🗣️ Đánh giá từ khách tham quan</h3>
+        <p><strong>👩 Hồng Ánh:</strong> “Không gian yên bình, thích hợp cho nhóm bạn!”</p>
+        <p><strong>👦 Quốc Bảo:</strong> “Thích nhất trò tát mương bắt cá, vui cực!”</p>
+        <p><strong>👧 Minh Thư:</strong> “Món ăn ngon, nhân viên thân thiện. Sẽ quay lại!”</p>
+        <p><strong>🧓 Chú Tư:</strong> “Cảnh đẹp, mát mẻ, gợi nhớ miền quê xưa.”</p>
+        <p><strong>👨‍👩‍👧 Gia đình Hiếu:</strong> “Trẻ con rất thích, người lớn thì được thư giãn!”</p>        
+    </div>
+  </div>
+
+  <footer>
+    <p>© Dự Án Do HIGH TEAM Xây Dựng & Phát Triển | Email: dulichvinhlong@gmail.com</p>
+  </footer>
+</body>
+</html>

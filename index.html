@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DU LỊCH VĨNH LONG</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .celebration-banner {
+      background: linear-gradient(45deg, #da251d, #ffcd00);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .floating-flags {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100px;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    .flag {
+      position: absolute;
+      width: 60px;
+      height: 40px;
+      background: #da251d;
+      animation: wave 3s infinite ease-in-out;
+    }
+
+    .flag::after {
+      content: '★';
+      color: #ffcd00;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+    }
+
+    @keyframes wave {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    .hero-content {
+      position: relative;
+    }
+
+    .celebration-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(218, 37, 29, 0.1), rgba(255, 205, 0, 0.1));
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Thêm banner chào mừng -->
+  <div class="celebration-banner">
+    🎉 Chào mừng đại lễ 30/4 - 1/5 | Ưu đãi đặc biệt cho các tour du lịch 🎊
+  </div>
+
+  <!-- Thêm hiệu ứng cờ bay -->
+  <div class="floating-flags">
+    <div class="flag" style="left: 5%;"></div>
+    <div class="flag" style="left: 20%;"></div>
+    <!-- Xóa lá cờ ở giữa -->
+    <div class="flag" style="right: 20%;"></div>
+    <div class="flag" style="right: 5%;"></div>
+</div>
+
+  <!-- Nút chuyển dark mode -->
+  <button id="darkModeToggle" title="Chuyển chế độ sáng/tối">🌙</button>
+  <!-- Popup chào mừng -->
+  <div class="popup" id="popup">🎉 Chào mừng bạn đến với Vĩnh Long!</div>
+  <script>
+    setTimeout(() => {
+      const popup = document.getElementById('popup');
+      if (popup) popup.style.display = 'none';
+    }, 5000);
+  </script>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>DU LỊCH VĨNH LONG</h1>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="#destinations">Điểm đến</a>
+      <a href="lichtrinh.html">Lịch trình</a>
+      <a href="tel:0123456789">Liên hệ</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero parallax-hero">
+    <div class="hero-content">
+      <h1>KHÁM PHÁ VĨNH LONG</h1>
+      <p id="typing-text"></p>
+      <a href="#tourList" class="cta-button">KHÁM PHÁ NGAY</a>
+    </div>
+  </section>
+
+  <!-- Tìm kiếm -->
+  <div class="search-section">
+    <input type="text" id="searchInput" placeholder="Tìm kiếm địa điểm du lịch...">
+  </div>
+
+  <h2 class="section-title" id="destinations">Tour Mới Nhất</h2>
+  <!-- Tour cards -->
+    <section class="tour-list" id="tourList">
+      <div class="tour-card" onclick="window.location.href='vinhsang.html'">
+        <img src="images/vinhsang.jpg" alt="KDL Vinh Sang">
+        <div class="tour-info">
+          <h3>KDL Vinh Sang</h3>
+          <p><i class="fas fa-clock"></i> 7h - 17h</p>
+          <p><i class="fas fa-map-marker-alt"></i> An Bình, Long Hồ</p>
+          <div class="price">
+            <p>Người lớn: 50.000đ/vé</p>
+            <p>Trẻ em: 35.000đ/vé (dưới 1,3m)</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="tour-card" onclick="window.location.href='anbinh.html'">
+        <img src="images/culaoanbinh.jpg" alt="Cù lao An Bình">
+        <div class="tour-info">
+          <h3>Cù lao An Bình</h3>
+          <p><i class="fas fa-clock"></i> 6h - 18h</p>
+          <p><i class="fas fa-map-marker-alt"></i> An Bình, Long Hồ</p>
+          <p class="price">Miễn phí</p>
+        </div>
+      </div>
+
+      <div class="tour-card" onclick="window.location.href='cocohome.html'">
+        <img src="images/cocohome.jpg" alt="COCO HOME">
+        <div class="tour-info">
+          <h3>COCO HOME</h3>
+          <p><i class="fas fa-clock"></i> 7h - 22h</p>
+          <p><i class="fas fa-map-marker-alt"></i> Long Hồ, Vĩnh Long</p>
+          <div class="price">
+            <p>20.000/người</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card" onclick="window.location.href='riverside.html'">
+        <img src="images/riverside.jpg" alt="Riverside Park Eco Resort">
+        <div class="tour-info">
+          <h3>Riverside Park Eco Resort</h3>
+          <p><i class="fas fa-clock"></i> 8h - 22h</p>
+          <p><i class="fas fa-map-marker-alt"></i> Long Hồ, Vĩnh Long</p>
+          <div class="price">
+            <p>Miễn Phí</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card" onclick="window.location.href='hoanghao.html'">
+        <img src="images/hoanghao.jpg" alt="KDL Sinh Thái Hoàng Hảo">
+        <div class="tour-info">
+          <h3>KDL Sinh Thái Hoàng Hảo</h3>
+          <p><i class="fas fa-clock"></i> 24/24</p>
+          <p><i class="fas fa-map-marker-alt"></i> Long Hồ, Vĩnh Long</p>
+          <div class="price">
+            <p>Tham quan: 30.000 VNĐ/người</p>
+            <p>Tham gia tất cả trò chơi: 90.000 VNĐ/người</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© Dự Án Do HIGH TEAM Thực Hiện & Phát Triển | Liên hệ: dulichvinhlong@gmail.com</p>
+  </footer>
+
+  <!-- Icon liên hệ nổi -->
+  <div class="floating-contact">
+    <a href="tel:0123456789" class="contact-btn phone" title="Gọi ngay">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="#" class="contact-btn ai" title="Chat AI">
+      <i class="fas fa-robot"></i>
+    </a>
+    <a href="https://zalo.me/0123456789" class="contact-btn zalo" title="Chat Zalo">
+      <i class="fas fa-comment-dots"></i>
+    </a>
+    <a href="https://m.me/yourpageid" class="contact-btn messenger" title="Chat Messenger">
+      <i class="fab fa-facebook-messenger"></i>
+    </a>
+  </div>
+
+  <!-- Hộp thoại AI -->
+  <div id="ai-chatbox" class="chatbox">
+    <div class="chatbox-header">
+      🤖 AI hỗ trợ du lịch
+      <span id="close-chatbox">&times;</span>
+    </div>
+    <div class="chatbox-body">
+      <p><strong>AI:</strong> Xin chào! Bạn muốn khám phá khu du lịch nào ở Vĩnh Long hôm nay?</p>
+    </div>
+  </div>
+
+  <!-- Nhân vật hoạt hình trợ giúp -->
+  <div class="animated-helper">
+    <div class="helper-chatbox">Cùng đi du lịch thôi! 🌴</div>
+    <div class="character">
+      <div class="eye-left"></div>
+      <div class="eye-right"></div>
+      <div class="mouth"></div>
+    </div>
+  </div>
+
+  <script>
+    // Code cho search và AI chatbox
+    const searchInput = document.getElementById('searchInput');
+    const tourList = document.getElementById('tourList');
+
+    searchInput.addEventListener('input', function () {
+      const keyword = searchInput.value.toLowerCase();
+      const tours = tourList.querySelectorAll('.tour-card');
+      tours.forEach(tour => {
+        const title = tour.querySelector('h3').innerText.toLowerCase();
+        tour.style.display = title.includes(keyword) ? 'block' : 'none';
+      });
+    });
+
+    // AI chatbox controls
+    document.querySelector('.ai').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById('ai-chatbox').style.display = 'block';
+    });
+
+    document.getElementById('close-chatbox').addEventListener('click', function () {
+      document.getElementById('ai-chatbox').style.display = 'none';
+    });
+
+    const helperBox = document.querySelector('.helper-chatbox');
+const messages = [
+  "Cùng đi du lịch thôi! 🌴",
+  "Khám phá Vĩnh Long nào! 🚗",
+  "Bạn muốn đi đâu hôm nay? 🌞"
+];
+let currentMessage = 0;
+
+function toggleHelperBox() {
+  helperBox.classList.add('hidden'); // Ẩn chatbox
+
+  setTimeout(() => {
+    currentMessage = (currentMessage + 1) % messages.length;
+    helperBox.textContent = messages[currentMessage];
+    helperBox.classList.remove('hidden'); // Hiện lại
+  }, 2000);
+}
+
+// Lặp lại: 5s hiện + 2s ẩn = 7s
+setInterval(toggleHelperBox, 7000);
+
+
+    // Scroll animation
+    window.addEventListener('scroll', () => {
+      const cards = document.querySelectorAll('.tour-card');
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        const triggerBottom = window.innerHeight * 0.8;
+        
+        if (cardTop < triggerBottom) {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(50px)';
+        }
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+  <script>
+    const typingText = document.getElementById('typing-text');
+    const message = "Trải nghiệm du lịch sinh thái độc đáo giữa lòng miền Tây";
+    let charIndex = 0;
+  
+    function typeEffect() {
+      if (charIndex < message.length) {
+        typingText.textContent += message.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 70); // tốc độ đánh chữ
+      }
+    }
+  
+    window.addEventListener("DOMContentLoaded", typeEffect);
+</script>
+<script>
+  const toggleButton = document.getElementById('darkModeToggle');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    // Đổi icon theo trạng thái
+    if (document.body.classList.contains('dark-mode')) {
+      toggleButton.textContent = '☀️';
+    } else {
+      toggleButton.textContent = '🌙';
+    }
+  });
+</script>
+<body>
+</html>

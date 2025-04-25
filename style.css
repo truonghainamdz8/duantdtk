@@ -1,0 +1,669 @@
+/* Base Styles */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #f2f3fb;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Header */
+.header {
+  background: #a1d8af;
+  padding: 20px;
+  text-align: center;
+  animation: slideDown 0.5s ease-out;
+}
+
+.header h1 {
+  font-size: 32px;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.header nav a {
+  color: #2e7d32;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.header nav a:hover {
+  color: #388e3c;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  animation: slideDown 0.4s ease;
+}
+
+/* Hero Section */
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.cta-button:hover {
+  background-color: #45a049;
+  transform: translateY(-5px);
+}
+
+.cta-button:active {
+  transform: translateY(-2px);
+}
+
+/* Search */
+.search-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.search-section input {
+  width: 60%;
+  max-width: 500px;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: 2px solid #2e7d32;
+  border-radius: 25px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-section input:focus {
+  border-color: #66bb6a;
+  box-shadow: 0 0 10px rgba(102, 187, 106, 0.3);
+  transform: scale(1.02);
+}
+
+/* Section title */
+.section-title {
+  text-align: center;
+  color: #2e7d32;
+  font-size: 26px;
+  margin: 20px 0;
+}
+
+/* Tour cards */
+.tour-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 0 30px 60px;
+}
+
+.tour-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  animation: fadeIn 0.8s ease-out;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tour-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.tour-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.tour-card:hover img {
+  transform: scale(1.05);
+}
+
+.tour-info {
+  padding: 15px;
+}
+
+.tour-info h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #2b7a4b;
+}
+
+.tour-info p {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.tour-info .price {
+  font-weight: bold;
+  color: #d32f2f;
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+.tour-info .price p {
+  margin: 2px 0;
+  font-size: 13px;
+}
+
+.tour-card:hover .price {
+  transform: translateY(-3px);
+  animation: priceJump 0.5s ease;
+}
+
+.tour-info .btn-view {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #2e7d32;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.tour-info .btn-view:hover {
+  background: #1b5e20;
+}
+
+/* Footer */
+footer {
+  background: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* Floating contact buttons */
+.floating-contact {
+  position: fixed;
+  right: 15px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.contact-btn {
+  background: #4caf50;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 45px;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, background 0.3s;
+  animation: bounce 2s infinite;
+}
+
+.contact-btn:hover {
+  transform: scale(1.2);
+  background: #388e3c;
+}
+
+/* AI Chatbox */
+.chatbox {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1001;
+  animation: slideInRight 0.5s ease-out;
+}
+
+.chatbox-header {
+  background: #2e7d32;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbox-header span {
+  cursor: pointer;
+}
+
+.chatbox-body {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Animated Helper Character */
+.animated-helper {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.helper-chatbox {
+  background: white;
+  color: #2e7d32;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-right: 10px;
+  transform-origin: right center;
+
+  /* 👇 Thêm hiệu ứng mượt hơn */
+  display: block;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.helper-chatbox.hidden {
+  animation: popOut 0.5s ease-out forwards;
+  pointer-events: none;
+}
+
+.helper-chatbox:after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 10px solid white;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+.animated-helper .character {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 30% 30%, #FFD54F, #FFA000);
+  border-radius: 50%;
+  position: relative;
+  animation: float 3s infinite ease-in-out;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+  cursor: pointer;
+}
+/* Mắt (lòng trắng) */
+.eye {
+  width: 16px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 30%;
+  z-index: 1;
+}
+
+.eye-left { left: 20%; }
+.eye-right { right: 20%; }
+
+/* Tròng đen (đồng tử) */
+.pupil {
+  width: 8px;
+  height: 12px;
+  background: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 35%;
+  z-index: 2;
+  animation: lookAround 6s infinite;
+}
+
+.pupil-left { left: 23%; }
+.pupil-right { right: 23%; }
+/* Chớp mắt đồng đều */
+@keyframes blink {
+  0%, 45%, 55%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.1);
+  }
+}
+/* Đồng tử */
+.animated-helper .character .eye-left,
+.animated-helper .character .eye-right {
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  background: #333;
+  border-radius: 50%;
+  top: 35%;
+  animation: lookAround 6s infinite;
+}
+
+.animated-helper .character .eye-left {
+  left: 25%;
+}
+
+.animated-helper .character .eye-right {
+  right: 25%;
+}
+
+/* Miệng cười */
+.animated-helper .character .mouth {
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  border: none;
+  border-bottom: 4px solid white;
+  border-radius: 50%;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+@keyframes priceJump {
+  0%, 100% { transform: translateY(-3px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes blinkLeft {
+  0%, 45%, 55%, 100% { transform: scaleY(1) rotate(-10deg); }
+  50% { transform: scaleY(0.1) rotate(-10deg); }
+}
+
+@keyframes blinkRight {
+  0%, 45%, 55%, 100% { transform: scaleY(1) rotate(10deg); }
+  50% { transform: scaleY(0.1) rotate(10deg); }
+}
+
+@keyframes lookAround {
+  0%, 40%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  60% { transform: translateX(2px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes popOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(20%) scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(40%) scale(0.7);
+  }
+}
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* Gộp hiệu ứng parallax và hình nền vào đây */
+.parallax-hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/banner.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh; /* hoặc 100vh nếu muốn full màn hình */
+  position: relative;
+  z-index: 1;
+}
+#typing-text::after {
+  content: "|";
+  animation: blinkCursor 0.8s steps(1) infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+/* Nút dark mode */
+#darkModeToggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  color: #2e7d32;
+  transition: color 0.3s;
+}
+
+#darkModeToggle:hover {
+  color: #1b5e20;
+}
+
+/* Giao diện tối */
+body.dark-mode {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+body.dark-mode .header {
+  background: #333;
+  color: #fff;
+}
+
+body.dark-mode .header nav a {
+  color: #ccc;
+}
+
+body.dark-mode .header nav a:hover {
+  color: #fff;
+}
+
+body.dark-mode .popup,
+body.dark-mode .chatbox,
+body.dark-mode .tour-card,
+body.dark-mode .helper-chatbox,
+body.dark-mode .search-section input {
+  background: #2b2b2b;
+  color: #eee;
+  border-color: #444;
+}
+
+body.dark-mode footer {
+  background: #111;
+  color: #ccc;
+}
+#darkModeToggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #2e7d32;
+  z-index: 1002;
+  transition: color 0.3s ease;
+}
+
+#darkModeToggle:hover {
+  color: #1b5e20;
+}
+
+/* Thêm styles cho trang trí lễ 30/4 */
+.celebration-banner {
+  background: linear-gradient(45deg, #da251d, #ffcd00);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.floating-flags {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.flag {
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  background: #da251d;
+  animation: wave 3s infinite ease-in-out;
+}
+
+.flag::after {
+  content: '★';
+  color: #ffcd00;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(10px) rotate(5deg); }
+}
+
+/* Cập nhật hero section */
+.hero-content {
+  position: relative;
+  background: linear-gradient(rgba(218, 37, 29, 0.1), rgba(255, 205, 0, 0.1));
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Cập nhật tour cards cho theme lễ hội */
+.tour-card {
+  border: 2px solid #ffcd00;
+  transition: all 0.3s ease;
+}
+
+.tour-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(218, 37, 29, 0.3);
+}
+
+.tour-info h3 {
+  color: #da251d;
+}
+
+/* Thêm hiệu ứng pháo hoa */
+@keyframes firework {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+.celebration-banner::before,
+.celebration-banner::after {
+  content: '✨';
+  position: absolute;
+  animation: firework 1.5s infinite;
+}
+
+.celebration-banner::before {
+  left: 20%;
+  top: 50%;
+}
+
+.celebration-banner::after {
+  left: 80%;
+  top: 50%;
+}
+
+  
